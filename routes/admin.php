@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 // ROUTES
 
 /** USER ********************************************/
-Route::get('user/index',  [
+Route::get('user/index', [
 		'as'	=> 'administrador.user.index',
 		'uses'	=> 'admin\UserController@index',	
 	])->middleware('can:is_admin,'.Acceso::class);
