@@ -6,6 +6,7 @@ use App\Acceso;
 use App\Facultad;
 use App\Sede;
 use App\Type;
+use App\User;
 use Illuminate\Support\Facades\Session;
 
 //use Illuminate\Contracts\Console\Kernel;
