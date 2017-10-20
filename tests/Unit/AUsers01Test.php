@@ -20,7 +20,7 @@ class AUsers01Test extends TestCase
       $user = factory(User::class)->create();
       $facultad_id = 1;
       $sede_id = 1;
-$cfacultad = Facultad::find($facultad_id)->cfacultad;
+$cfacultad = App\Facultad::find($facultad_id)->cfacultad;
       $this->authUser($user->id, $facultad_id, $sede_id, 5);
       $response = $this->actingAs($user);
 
