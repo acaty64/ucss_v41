@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\Acceso;
 use App\DataUser;
+use App\Facultad;
 use App\User;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,7 @@ class AUsers01Test extends TestCase
       $user = factory(User::class)->create();
       $facultad_id = 1;
       $sede_id = 1;
-
+$cfacultad = Facultad::find($facultad_id)->cfacultad;
       $this->authUser($user->id, $facultad_id, $sede_id, 5);
       $response = $this->actingAs($user);
 
