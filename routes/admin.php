@@ -3,15 +3,20 @@
 use App\Acceso;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 // ROUTES
 
 /** USER ********************************************/
-Route::get('user/index', [
+Route::get('user/index', function()
+{
+	dd(Session::get('ctype'));
+})->middleware('can:is_admin,'.Acceso::class);
+	/*[
 		'as'	=> 'administrador.user.index',
 		'uses'	=> 'admin\UserController@index',	
 	])->middleware('can:is_admin,'.Acceso::class);
-
+*/
 Route::get('user/create', [
 		'as'	=> 'admin.user.create',
 		'uses'	=> 'admin\UserController@create',	
