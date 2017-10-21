@@ -7,15 +7,11 @@ use Illuminate\Http\Request;
 // ROUTES
 
 /** USER ********************************************/
-Route::get('user/index', function ()
-{
-	dd('Route user/index');
-})->middleware('can:is_admin,'.Acceso::class);
-	/*[
+Route::get('user/index', [
 		'as'	=> 'administrador.user.index',
 		'uses'	=> 'admin\UserController@index',	
 	])->middleware('can:is_admin,'.Acceso::class);
-*/
+
 Route::get('user/create', [
 		'as'	=> 'admin.user.create',
 		'uses'	=> 'admin\UserController@create',	
