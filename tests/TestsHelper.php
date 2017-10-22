@@ -38,6 +38,7 @@ trait TestsHelper
     		]);
 
     	Session::put('facultad_id', $facultad_id);
+dd('facultad_id: '.Session::get('facultad_id'));
     	Session::put('cfacultad', $cfacultad);
     	Session::put('sede_id', $sede_id);
     	Session::put('csede', $csede);
